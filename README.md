@@ -5,6 +5,20 @@ This repo includes a web UI, a C++ CLI version, and an Android app.
 
 Built as coursework for my Organization Programming Language class.
 
+## Table of Contents
+- [Features](#features)
+- [Project layout](#project-layout)
+- [Build](#build)
+- [Run](#run)
+- [Saved game format](#saved-game-format)
+- [Notes](#notes)
+- [What's hard about this project?](#what-s-hard-about-this-project)
+- [Decision-making rule (computer player)](#decision-making-rule-computer-player)
+- [What skills does this prove?](#what-skills-does-this-prove)
+- [Documentation](#documentation)
+- [Tech](#tech)
+- [Screenshots](#screenshots)
+
 ## Features
 - Tournament-style play across rounds
 - Human vs Computer, Human vs Human, and Computer vs Computer modes

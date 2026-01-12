@@ -102,9 +102,6 @@ Open `Android/` in Android Studio and run the app.
 ## Notes
 - Web UI uses ES modules, so it must be served over http.
 
-## Why did you build this?
-I built this to practice implementing the same game across multiple platforms and to explore how the same rules and computer logic can drive CLI, web, and mobile UIs.
-
 ## What’s hard about this project?
 Keeping the rules consistent across three codebases, validating cover/uncover combinations, and managing turn flow, snapshots, and rewind logic without desyncing the UI.
 

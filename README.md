@@ -65,17 +65,32 @@ Open `Android/` in Android Studio and run the app.
 | Screenshot 1 |
 | --- |
 | ![Screenshot 1](screenshots/one.png) |
-| Add a short caption for the Web UI welcome screen. |
+| C++ CLI help screen listing cover/uncover options with an AI recommendation for dice sum 7. |
 
 | Screenshot 2 |
 | --- |
 | ![Screenshot 2](screenshots/two.png) |
-| Add a short caption for a round in progress. |
+| C++ CLI round-over summary showing a human win, queued advantage, and tournament score totals. |
 
 | Screenshot 3 |
 | --- |
 | ![Screenshot 3](screenshots/three.png) |
-| Add a short caption for the end-of-round screen. |
+| Android round result screen showing a computer win by cover and updated totals. |
+
+| Screenshot 4 |
+| --- |
+| ![Screenshot 4](screenshots/four.png) |
+| Android in-round screen with dice roll info, board state, controls, and game log. |
+
+| Screenshot 5 |
+| --- |
+| ![Screenshot 5](screenshots/five.png) |
+| Web round setup screen in Computer vs Computer mode with a roll-off result for first player. |
+
+| Screenshot 6 |
+| --- |
+| ![Screenshot 6](screenshots/six.png) |
+| Web rewind dialog showing move history and board previews for the selected turn. |
 
 ## Saved game format
 - Save/load uses `.txt` snapshot files.

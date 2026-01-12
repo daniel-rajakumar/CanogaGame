@@ -3,6 +3,8 @@
 A multi-platform implementation of Canoga, a dice-and-strategy board game.
 This repo includes a web UI, a C++ CLI version, and an Android app.
 
+Built as coursework for my Organization Programming Language class.
+
 ## Features
 - Tournament-style play across rounds
 - Human vs Computer, Human vs Human, and Computer vs Computer modes
@@ -15,7 +17,7 @@ This repo includes a web UI, a C++ CLI version, and an Android app.
 | Screenshot 1 |
 | --- |
 | ![Screenshot 1](screenshots/one.png) |
-| C++ CLI help screen listing cover/uncover options with an AI recommendation for dice sum 7. |
+| C++ CLI help screen listing cover/uncover options with a computer recommendation for dice sum 7. |
 
 | Screenshot 2 |
 | --- |
@@ -101,16 +103,59 @@ Open `Android/` in Android Studio and run the app.
 - Web UI uses ES modules, so it must be served over http.
 
 ## Why did you build this?
-I built this to practice implementing the same game across multiple platforms and to explore how the same rules and AI can drive CLI, web, and mobile UIs.
+I built this to practice implementing the same game across multiple platforms and to explore how the same rules and computer logic can drive CLI, web, and mobile UIs.
 
 ## What’s hard about this project?
 Keeping the rules consistent across three codebases, validating cover/uncover combinations, and managing turn flow, snapshots, and rewind logic without desyncing the UI.
 
-## Where is the “intelligence” / decision-making?
-The AI move selection evaluates possible cover/uncover options for a dice roll, weighs advantage squares, and explains its reasoning to the player.
+## Decision-making rule (computer player)
+- Generate all legal cover and uncover combinations for the current dice sum.
+- If no legal combinations exist, take no move.
+- If any cover combination would cover all remaining squares, cover immediately to win the round.
+- Else if any uncover combination would uncover all opponent squares, uncover immediately to win the round.
+- Otherwise prefer covering; if no cover moves exist, uncover.
+- Choose the combination with the most squares; if tied, prefer higher-value squares (Web uses higher total sum; CLI/Android use highest square).
+
+Best-move algorithm: once the move type is selected, each candidate combination is ranked by square count first. In the Web code (`_pickBestCombo` in `Web/Source/js/model/ComputerPlayer.js`), ties break by higher total sum; in Android/CLI (`chooseMove` in `Android/app/src/main/java/com/example/oplcanoga/model/ComputerPlayer.java` and `chooseBestComboJava` in `CLI/Source Files/Computer.cpp`), ties break by the highest square value. This favors moves that cover or uncover more squares, and prioritizes larger values when the count is tied.
+
+Pseudo code:
+```text
+coverOptions = getCoverOptions(diceSum)
+uncoverOptions = getUncoverOptions(diceSum)
+
+if coverOptions empty and uncoverOptions empty:
+  return NONE
+
+if any coverOption covers all remaining squares:
+  return COVER with that option
+
+if any uncoverOption uncovers all opponent squares:
+  return UNCOVER with that option
+
+if coverOptions not empty:
+  candidates = coverOptions
+  action = COVER
+else:
+  candidates = uncoverOptions
+  action = UNCOVER
+
+best = candidates[0]
+for each option in candidates:
+  if option.count > best.count:
+    best = option
+  else if option.count == best.count:
+    if tieBreak(option) > tieBreak(best):
+      best = option
+
+return action with best
+
+tieBreak(option):
+  Web: sum(option)
+  Android/CLI: max(option)
+```
 
 ## What skills does this prove?
-Game rules modeling, state management, AI move evaluation, cross-platform UI implementation (CLI/Web/Android), and snapshot serialization.
+Game rules modeling, state management, computer move evaluation, cross-platform UI implementation (CLI/Web/Android), and snapshot serialization.
 
 ## Documentation
 - `Web/doc/` - notes and reports

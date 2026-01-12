@@ -5,6 +5,8 @@ This repo includes a web UI, a C++ CLI version, and an Android app.
 
 Built as coursework for my Organization Programming Language class.
 
+Demo: http://projects.canogagame.danielrajakumar.com/
+
 ## Table of Contents
 - [Features](#features)
 - [Project layout](#project-layout)

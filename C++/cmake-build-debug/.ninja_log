@@ -1,0 +1,17 @@
+# ninja log v6
+5	120	1748756450381127874	build.ninja	a259e518c075087d
+7	1040	1748756070049814416	CMakeFiles/c__.dir/main.cpp.o	26ff91555b31ccf2
+11	751	1748669817478490331	CMakeFiles/c__.dir/Source_Files/main.cpp.o	768204892da03c61
+4	93	1748756450381127874	build.ninja	797c7c91065f0de6
+5	718	1748756450399721959	CMakeFiles/c__.dir/main.cpp.o	26ff91555b31ccf2
+13	110	1748756475699170954	CMakeFiles/c__.dir/Source_Files/Player.cpp.o	1ca93b5b2ab7331f
+19	95	1748756520172540819	CMakeFiles/c__.dir/Source_Files/Computer.cpp.o	f871b5cb0c794d05
+21	95	1748756520174390811	CMakeFiles/c__.dir/Source_Files/BoardView.cpp.o	b505257cabe61117
+20	95	1748756520173038722	CMakeFiles/c__.dir/Source_Files/Human.cpp.o	2b9a785ed803bc51
+20	97	1748756520173795660	CMakeFiles/c__.dir/Source_Files/Board.cpp.o	e6ff007959841a82
+7	58	1748756529744843540	CMakeFiles/c__.dir/Source_Files/Round.cpp.o	6b479499fe227e77
+6	1151	1748756588157289755	CMakeFiles/c__.dir/main.cpp.o	26ff91555b31ccf2
+6	692	1748756615633963319	CMakeFiles/c__.dir/main.cpp.o	26ff91555b31ccf2
+16	1649	1748756637126063473	CMakeFiles/c__.dir/main.cpp.o	26ff91555b31ccf2
+16	1687	1748756637126593542	CMakeFiles/c__.dir/Source_Files/Tournament.cpp.o	2003db80384848e0
+1687	1877	1748756638797300785	c__	23f5267c3f00a3f3

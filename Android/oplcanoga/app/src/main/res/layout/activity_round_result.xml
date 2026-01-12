@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/round_result_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_screen"
+    android:layoutAnimation="@anim/layout_stagger"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tvRoundResultTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Round Result"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.Oplcanoga.Title"
+        android:textColor="@color/canoga_on_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardRoundSummary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvRoundResultTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvRoundWinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Winner: -"
+                android:textAppearance="@style/TextAppearance.Oplcanoga.TitleSmall"
+                android:textColor="@color/canoga_on_surface" />
+
+            <TextView
+                android:id="@+id/tvRoundWinType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Win Type: -"
+                android:textAppearance="@style/TextAppearance.Oplcanoga.Body"
+                android:textColor="@color/canoga_on_surface_variant" />
+
+            <TextView
+                android:id="@+id/tvRoundPoints"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Points this round: 0"
+                android:textAppearance="@style/TextAppearance.Oplcanoga.Body"
+                android:textColor="@color/canoga_on_surface_variant" />
+
+            <TextView
+                android:id="@+id/tvTotalScores"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Total — Human: 0 | Computer: 0"
+                android:textAppearance="@style/TextAppearance.Oplcanoga.BodySmall"
+                android:textColor="@color/canoga_on_surface_variant" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:id="@+id/layoutButtons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardRoundSummary">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPlayAgain"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:text="Play Again" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnQuitTournament"
+            style="@style/Widget.Oplcanoga.Button.Outlined"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Quit" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

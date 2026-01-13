@@ -9,20 +9,19 @@ Built as coursework for my Organization Programming Language class.
 **Demo:** http://projects.canogagame.danielrajakumar.com/
 
 ## Table of Contents
-- [Features](#features)
-- [Quick Start (Web)](#quick-start-web)
-- [Project Layout](#project-layout)
-- [Build](#build)
-- [Run](#run)
-- [Saved Game Format](#saved-game-format)
-- [Notes](#notes)
-- [Decision-Making (Computer Player)](#decision-making-computer-player)
-- [Project Notes](#project-notes)
+- [What it is](#what-it-is)
+- [How to use it](#how-to-use-it)
+- [How to build it](#how-to-build-it)
+- [Why it matters](#why-it-matters)
+- [What's hard](#what-s-hard)
+- [What skills it proves](#what-skills-it-proves)
 - [Documentation](#documentation)
 - [Tech Stack](#tech-stack)
 - [Screenshots](#screenshots)
 
-## Features
+## What it is
+
+### Features
 - Tournament-style play across rounds
 - Human vs Computer, Human vs Human, and Computer vs Computer modes
 - Configurable board sizes (9-11)
@@ -30,69 +29,13 @@ Built as coursework for my Organization Programming Language class.
 - Save and load game snapshots (.txt) (Web)
 - Move log and rewind support (Web)
 
-## Quick Start (Web)
-Serve `Web/Source` with a local server (ES modules require http):
-
-```sh
-cd Web/Source
-python3 -m http.server 8000
-```
-
-Open `http://localhost:8000/`.
-
-## Project Layout
+### Project Layout
 - `Android/` - Android app source
 - `CLI/` - C++ CLI implementation
 - `Web/` - Web app source and docs
 - `screenshots/` - UI captures
 
-## Build
-
-### CLI
-Requirements: CMake 3.31+ and a C++20 compiler.
-
-From `CLI/`:
-
-```sh
-cmake -S . -B build
-cmake --build build
-```
-
-### Android
-From `Android/`:
-
-```sh
-./gradlew assembleDebug
-```
-
-### Web
-No build step; serve `Web/Source` as static files.
-
-## Run
-
-### CLI
-From `CLI/`:
-
-```sh
-./build/c__
-```
-
-### Android
-Open `Android/` in Android Studio and run the app.
-
-### Web
-Use the Quick Start instructions above.
-
-## Saved Game Format
-- Save/load uses `.txt` snapshot files.
-- Upload saved games from the Web welcome screen.
-- Example snapshots live in `Web/Source/samples/`.
-
-## Notes
-> [!NOTE]
-> The Web UI uses ES modules, so it must be served over HTTP.
-
-## Decision-Making (Computer Player)
+### Decision-Making (Computer Player)
 Implementation lives in:
 - `Web/Source/js/model/ComputerPlayer.js`
 - `Android/app/src/main/java/com/example/oplcanoga/model/ComputerPlayer.java`
@@ -144,15 +87,63 @@ tieBreak(option):
   Android/CLI: max(option)
 ```
 
-## Project Notes
+## How to use it
 
-### Why did I build this?
-I built this to practice implementing the same game across multiple platforms and to explore how the same rules and computer logic can drive CLI, web, and mobile UIs.
+### Quick Start (Web)
+Serve `Web/Source` with a local server (ES modules require http):
 
-### What's hard about this project?
+```sh
+cd Web/Source
+python3 -m http.server 8000
+```
+
+Open `http://localhost:8000/`.
+
+### Run
+**CLI:** `./build/c__` from `CLI/`
+
+**Android:** Open `Android/` in Android Studio and run the app.
+
+**Web:** Follow the Quick Start steps above.
+
+### Saved Game Format
+- Save/load uses `.txt` snapshot files.
+- Upload saved games from the Web welcome screen.
+- Example snapshots live in `Web/Source/samples/`.
+
+### Notes
+> [!NOTE]
+> The Web UI uses ES modules, so it must be served over HTTP.
+
+## How to build it
+
+### CLI
+Requirements: CMake 3.31+ and a C++20 compiler.
+
+From `CLI/`:
+
+```sh
+cmake -S . -B build
+cmake --build build
+```
+
+### Android
+From `Android/`:
+
+```sh
+./gradlew assembleDebug
+```
+
+### Web
+No build step; serve `Web/Source` as static files.
+
+## Why it matters
+I built this to practice implementing the same game across multiple platforms, and it matters because it demonstrates how one ruleset and computer strategy can drive CLI, web, and mobile UIs.
+
+## What's hard
 Keeping the rules consistent across three codebases, validating cover/uncover combinations, and managing turn flow, snapshots, and rewind logic without desyncing the UI.
 
-### What skills does this prove?
+## What skills it proves
 Game rules modeling, state management, computer move evaluation, cross-platform UI implementation (CLI/Web/Android), and snapshot serialization.
 
 ## Documentation
